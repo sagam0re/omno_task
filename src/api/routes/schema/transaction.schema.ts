@@ -16,21 +16,14 @@ export const createTransactionSchema = {
       },
       currency: {
         type: "string",
-        enum: Object.values(Currency),
-        minLength: 3,
-        maxLength: 3,
         description: "ISO 4217 Currency Code",
       },
       cardNumber: {
         type: "string",
-        minLength: 16,
-        maxLength: 16,
         description: "16-digit card number",
       },
       cvv: {
         type: "string",
-        minLength: 3,
-        maxLength: 4,
         description: "Card security code",
       },
       cardExpiry: { type: "string", description: "Card expiry date (MM/YY)" },

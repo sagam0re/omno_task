@@ -30,6 +30,7 @@ async function main() {
       "up",
       "-d",
       "--build",
+      "db",
     ]);
   } catch (error) {
     console.error("Failed to start Docker containers:", error);

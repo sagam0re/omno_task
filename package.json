@@ -4,14 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "test": "vitest",
+    "build": "tsc",
     "docker:up": "docker compose -f docker-compose.yml up -d --build",
     "docker:down": "docker compose -f docker-compose.yml down",
     "db:migrate": "ts-node ./src/infrastructure/migrate.ts",
+
     "dev:setup": "npm run docker:up && npm run db:migrate",
-    "start": "node src/server.ts",
-    "dev": "node scripts/dev-runner.js",
-    "test": "vitest",
-    "build": "tsc"
+    "start": "npm run docker:up",
+    "dev": "node scripts/dev-runner.js"
   },
   "keywords": [],
   "author": "Giorgi Janelidze",

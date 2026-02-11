@@ -36,14 +36,20 @@ Ensure you have the following installed on your machine:
     docker compose up -d --build
     ```
 
+    or
+
+    ```bash
+    npm run start
+    ```
+
     This will:
     - Start the PostgreSQL database container.
     - Build the API image and start the `payment_service_api` container.
     - Run database migrations automatically on startup.
 
-    The server will be available at `http://localhost:3000`.
+    The server will be available at `http://localhost:3001`.
 
-    _Note: If you prefer running the app locally without Docker for the API, you can still use `npm install` and `npm run dev` as described in `package.json` scripts._
+    _Note: If you prefer running the app locally without Docker for the API, you can still use `npm install` and `npm run dev` as described in `package.json` scripts. The server will be available at `http://localhost:3000`._
 
 ## Testing Transactions
 
@@ -82,9 +88,9 @@ Initiates a payment.
   {
     "amount": 1000,
     "currency": "EUR",
-    "cardNumber": "5555000000000000",
-    "cardExpiry": "12/25",
-    "cvv": "123",
+    "cardNumber": "5555111111111111",
+    "cardExpiry": "12/29",
+    "cvv": "978",
     "orderId": "ord_123"
   }
   ```
@@ -94,7 +100,7 @@ Initiates a payment.
 ```bash
 curl -X POST http://localhost:3000/transactions ^
   -H "Content-Type: application/json" ^
-  -d "{\"amount\": 1000, \"currency\": \"EUR\", \"cardNumber\": \"5555000000000000\", \"cardExpiry\": \"12/25\", \"cvv\": \"123\"}"
+  -d "{\"amount\": 1000, \"currency\": \"EUR\", \"cardNumber\": \"5555111111111111\", \"cardExpiry\": \"12/29\", \"cvv\": \"978\"}"
 ```
 
 ### 2. Webhook Callback

@@ -27,10 +27,10 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: payment_db
       DATABASE_URL: postgres://user:password@db:5432/payment_db
-      PORT: 3000
-      SERVER_URL: http://0.0.0.0:3000
+      PORT: 3001
+      SERVER_URL: http://0.0.0.0:3001
     ports:
-      - "3000:3000"
+      - "3001:3001"
     depends_on:
       db:
         condition: service_healthy
