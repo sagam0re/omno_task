@@ -6,11 +6,7 @@ import path from "path";
 dotenv.config();
 
 const dbConfig = {
-  host: process.env.PG_HOST,
-  port: parseInt(process.env.PG_PORT || "5432", 10),
-  user: process.env.PG_USER,
-  password: process.env.PG_PASSWORD,
-  database: process.env.PG_DATABASE,
+  connectionString: process.env.DATABASE_URL,
 };
 
 const MAX_RETRIES = 10;

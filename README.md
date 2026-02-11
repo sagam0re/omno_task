@@ -21,35 +21,29 @@ Ensure you have the following installed on your machine:
 
 ## Setup & Installation
 
-1. **Clone the Repository**
+1.  **Clone the Repository**
 
-   ```bash
-   git clone <repository-url>
-   cd payment-service
-   ```
+    ```bash
+    git clone <repository-url>
+    cd payment-service
+    ```
 
-2. **Install Dependencies**
+2.  **Start the Application**
 
-   ```bash
-   npm install
-   ```
+    You can run the entire stack (Database + API) using Docker Compose.
 
-3. **Environment Configuration**
-   The application comes with a default `.env` file. Modify it if you need custom configurations.
+    ```bash
+    docker compose up -d --build
+    ```
 
-4. **Start the Application**
-   This command starts the containerized PostgreSQL database and runs database migrations.
-   Only for the first time.
+    This will:
+    - Start the PostgreSQL database container.
+    - Build the API image and start the `payment_service_api` container.
+    - Run database migrations automatically on startup.
 
-   ```bash
-   npm run dev:setup
-   ```
+    The server will be available at `http://localhost:3000`.
 
-5. **Run the Development Server**
-   ```bash
-   npm run dev
-   ```
-   The server will start at `http://localhost:3000`.
+    _Note: If you prefer running the app locally without Docker for the API, you can still use `npm install` and `npm run dev` as described in `package.json` scripts._
 
 ## Testing Transactions
 
