@@ -24,7 +24,7 @@ Ensure you have the following installed on your machine:
 1.  **Clone the Repository**
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/sagam0re/omno_task.git
     cd payment-service
     ```
 
@@ -113,6 +113,7 @@ Updates the status of a transaction.
   ```json
   {
     "transactionId": "tx_123456",
+    "finalAmount": 1000,
     "status": "SUCCESS"
   }
   ```
@@ -122,7 +123,7 @@ Updates the status of a transaction.
 ```bash
 curl -X POST http://localhost:3000/webhooks/psp ^
   -H "Content-Type: application/json" ^
-  -d "{\"transactionId\": \"tx_123456\", \"status\": \"SUCCESS\"}"
+  -d "{\"transactionId\": \"tx_123456\", \"finalAmount\": 1000, \"status\": \"SUCCESS\"}"
 ```
 
 ### 3. Swagger UI
