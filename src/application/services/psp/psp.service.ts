@@ -41,7 +41,7 @@ export class PSPService implements IPSPService {
       return {
         transactionId: internalId,
         status: TransactionStatus.PENDING_3DS,
-        redirectUrl: `${process.env.SERVER_URL}/psp/3ds/${internalId}`,
+        redirectUrl: `${process.env.BASE_URL}/psp/3ds/${internalId}`,
       };
     } else if (cardNumber.startsWith("5555")) {
       await this.sendWebhook(callbackUrl, {

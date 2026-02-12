@@ -1,4 +1,5 @@
 import Fastify, { FastifyInstance } from "fastify";
+import fastifyCors from "@fastify/cors";
 import plugin from "./api/plugins/plugin";
 import transactionRoutes from "./api/routes/transaction.route";
 import webhookRoutes from "./api/routes/webhook.route";
@@ -12,7 +13,9 @@ const buildApp = async (): Promise<FastifyInstance> => {
   });
 
   app.register(plugin);
-  app.register(require("@fastify/cors"), { origin: "*" });
+  app.register(fastifyCors, {
+    origin: ["localhost:3000", "localhost:3001"],
+  });
 
   await app.register(transactionRoutes);
   await app.register(webhookRoutes);

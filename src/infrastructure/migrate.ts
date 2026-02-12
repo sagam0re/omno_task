@@ -37,7 +37,7 @@ async function migrate() {
   }
 
   try {
-    const sqlPath = path.join(__dirname, "../../migrations/init.sql");
+    const sqlPath = path.join(__dirname, "./migrations/init.sql");
     const sql = fs.readFileSync(sqlPath, "utf8");
     console.log("Running init.sql...");
     await client.query(sql);

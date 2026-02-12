@@ -47,9 +47,9 @@ Ensure you have the following installed on your machine:
     - Build the API image and start the `payment_service_api` container.
     - Run database migrations automatically on startup.
 
-    The server will be available at `http://localhost:3001`.
+    The server will be available at `http://localhost:3000`.
 
-    _Note: If you prefer running the app locally without Docker for the API, you can still use `npm install` and `npm run dev` as described in `package.json` scripts. The server will be available at `http://localhost:3000`._
+    _Note: If you prefer running the app locally without Docker for the API, you can still use `npm install` and `npm run dev` as described in `package.json` scripts. The server will be available at `http://localhost:3001`._
 
 ## Testing Transactions
 
@@ -64,7 +64,8 @@ We provide a handy batch file to quickly test different transaction scenarios.
    ```
    _Note: If running from Git Bash or similar, use `./create_transactions.bat`._
 
-This script executes three `curl` commands corresponding to the scenarios below:
+This script executes three `curl` commands to test the validations of the API.
+And three `curl` commands corresponding to the scenarios below:
 
 ### Manual Testing Scenarios
 
@@ -126,7 +127,11 @@ curl -X POST http://localhost:3000/webhooks/psp ^
 
 ### 3. Swagger UI
 
+**Running with docker:**
 Visit [http://localhost:3000/docs](http://localhost:3000/docs) to explore the full API documentation interactively.
+
+**Running locally without docker:**
+Visit [http://localhost:3001/docs](http://localhost:3001/docs) to explore the full API documentation interactively.
 
 ## Architecture
 

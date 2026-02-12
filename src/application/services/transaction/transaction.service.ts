@@ -33,13 +33,13 @@ export class TransactionService implements ITransactionService {
       // Browser -> Payment Service (Failure) : Needs Public Localhost URL
 
       const pspResponse = await axios.post(
-        `${process.env.SERVER_URL}/psp/transactions`,
+        `${process.env.BASE_URL}/psp/transactions`,
         {
           ...payload,
           transactionId: transaction.id,
           internalId: randomTransactionId,
-          callbackUrl: `${process.env.SERVER_URL}/webhooks/psp`,
-          failureUrl: `${process.env.SERVER_URL}/transactions/failure`,
+          callbackUrl: `${process.env.BASE_URL}/webhooks/psp`,
+          failureUrl: `${process.env.BASE_URL}/transactions/failure`,
         },
       );
 

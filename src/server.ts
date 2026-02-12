@@ -10,7 +10,7 @@ const startServer = async () => {
       host: new URL(`${process.env.SERVER_URL}`).hostname,
     });
 
-    app.log.info(`Documentation available at ${process.env.SERVER_URL}/docs`);
+    app.log.info(`Documentation available at ${process.env.BASE_URL}/docs`);
   } catch (err) {
     console.error(err);
     process.exit(1);

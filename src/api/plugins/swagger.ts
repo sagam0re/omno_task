@@ -10,7 +10,7 @@ const swaggerPlugin: FastifyPluginAsync = async (fastify, options) => {
         description: "API for simulating payments and 3DS flow",
         version: "1.0.0",
       },
-      host: "localhost:3000",
+      host: `${process.env.HOST}:${process.env.PORT}`,
       schemes: ["http"],
       consumes: ["application/json"],
       produces: ["application/json"],

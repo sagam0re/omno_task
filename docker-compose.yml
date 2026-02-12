@@ -23,14 +23,13 @@ services:
     build: .
     container_name: payment_service_api
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: payment_db
       DATABASE_URL: postgres://user:password@db:5432/payment_db
-      PORT: 3001
-      SERVER_URL: http://0.0.0.0:3001
+      SERVER_URL: http://0.0.0.0:3000
+      BASE_URL: http://localhost:3000
+      PORT: 3000
+      HOST: localhost
     ports:
-      - "3001:3001"
+      - "3000:3000"
     depends_on:
       db:
         condition: service_healthy
